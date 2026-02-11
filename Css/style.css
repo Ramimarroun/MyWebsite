@@ -5,44 +5,46 @@ body {
 }
 
 .container{
-    display: flex;
-    justify-content: space-around;
-    font-size: 1.2rem;
-    height: 10vh;
-    align-items: center;
     background-color: rgba(41, 60, 100, 0.9);
     border-bottom: 1px solid #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 nav{
-    width: 50%;
-}
-ul{
+    width: 90%;
     display: flex;
-    gap: 75px;
-   
-    
+    justify-content:space-between;
+    align-items: center;
+    height: 10vh;
 }
+.links{
+  display: flex;
+  gap: 75px;
+  width: 70%;
+}
+.sidebar-links, .hamburger{
+    display: none;
+}
+
 li{
     list-style: none;
-    min-width: 120px;
     text-align: center;
 }
 a{
     text-decoration: none;
     color: #b3ffff;
+    text-transform: uppercase;
 }
 #logo{
-    width: 15%; 
+    width: 30%; 
 }
+
 main{
     background-color: #1E293B;
     height: 90vh;
    
 }
-p{
-    margin: 0px;
-}
-
 .hero{
   
     display: flex;
