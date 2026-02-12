@@ -1,7 +1,10 @@
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: "Comic Neue", cursive;
   color:  #b3ffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .alert {
   position: fixed;
@@ -19,7 +22,6 @@ body {
   text-align: center;
 }
 
-
 .alert button {
   margin-top: 10px;
   padding: 6px 16px;
@@ -33,6 +35,10 @@ body {
 
 .alert button:hover {
   opacity: 0.85;
+}
+header{
+    display: flex;
+    flex-direction: column;
 }
 
 .container{
@@ -51,11 +57,35 @@ nav{
 }
 .links{
   display: flex;
-  gap: 75px;
+  gap: 25px;
+  justify-content: space-around;
   width: 70%;
 }
-.sidebar-links, .hamburger{
+.sidebar-links, .hamburger, .close{
     display: none;
+}
+.active-sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100vh;
+    background-color:  rgba(41, 60, 100, 0.9);
+}
+.close{
+position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+Ul{
+margin: 0;
+padding: 20px;
+
 }
 
 li{
@@ -73,7 +103,7 @@ a{
 
 main{
     background-color: #1E293B;
-    height: 90vh;
+    flex: 1;
    
 }
 .hero{
@@ -82,10 +112,20 @@ main{
     justify-content:space-around;
     align-items: center;
     gap: 5px;
+    height: auto;
 }
+.hero-image img{
+  max-width: 100%;
+  height: auto;
 
+}
+.hero-image{
+    width: 40%;
+   
+    text-align: end;
+}
 .hero-text{
-  width: 40%;  
+  width: 50%;  
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -93,7 +133,6 @@ main{
 }
 .hero-text p{
     line-height: 3rem;
-    font-size: 1.2rem;
     color: #fff86c;
 }
 .hero-text h2{
@@ -106,7 +145,7 @@ main{
     background-color: #FFFFFF;
     color: #1E293B;
     padding:50px ;
-    height: 50vh;
+    height: auto;
     gap: 100px;
 }
 .features-card{
@@ -115,8 +154,8 @@ main{
     align-items: center;
     justify-content: center;
     border-radius: 16px;
-    padding: 25px;
-    width: 275px;
+    padding: 20px;
+    width: 290px;
     gap:35px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     border: 1px solid rgba(255,255,255,0.05);
@@ -139,13 +178,46 @@ button{
 }
 
 footer{
-    background-color: #0F172A;
-    border-top: 1px solid #374151;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    bottom: 0;
-    width: 100%;
-    height: 18vh;
-    margin-top: 400px;
+  background-color: #0F172A;
+  border-top: 1px solid #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin-top: 0;
+  text-align: center;
 }
+
+
+
+
+@media(max-width:1100px){
+.links{
+    display: none;
+}
+.hamburger{
+    display: block;
+}
+
+
+}
+@media(max-width:1024px){
+    #features{
+        flex-direction: column;   
+        align-items: center;     
+    }
+    .features-card{
+        width: 400px;
+    }
+    body{
+        font-size: 0.8rem;
+    }
+}
+@media(max-width:430px){
+    .features-card{
+        width: 280px;
+    }
+}
+
+
